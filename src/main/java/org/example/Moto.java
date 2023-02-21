@@ -7,10 +7,11 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 //@Component
-//@Scope("singleton")
-public class Car implements Transport{
-    public void go(){
-        System.out.println("Автомобиль едет");
+//@Scope("prototype")
+public class Moto implements Transport{
+    @Override
+    public void go() {
+        System.out.println("Мотоцикл едет");
     }
     @PostConstruct
     public void init(){

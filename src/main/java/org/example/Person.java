@@ -1,17 +1,29 @@
 package org.example;
 
-public class Person {
-    private  Car car;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
-    public void setCar(Car car) {
-        this.car = car;
+//@Component
+public class Person {
+    private  Transport transport;
+//    @Qualifier("moto")
+//    @Autowired
+//    public void setCar(Transport transport) {
+//        this.transport = transport;
+//    }
+
+//       @Autowired
+//        public Person(@Qualifier("moto") Transport transport) {
+//        this.transport = transport;
+//    }
+
+    public Person(Transport transport) {
+        this.transport = transport;
     }
 
-    //    public Person(Car car) {
-//        this.car = car;
-//    }
-    public void getDriveCar(){
-        System.out.println("Владелец сел в автомобиль");
-        car.go();
+    public void getDriveTransport(){
+        System.out.println("Владелец сел в транспорт");
+        transport.go();
     }
 }
